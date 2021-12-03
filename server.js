@@ -18,7 +18,7 @@ var serviceAccount = {
     "client_email": "firebase-adminsdk-8a9co@cannabisstand-dfdcb.iam.gserviceaccount.com",
     "client_id": "110866442327222236207",
     "auth_uri": process.env.auth_uri,
-    "token_uri": "https://oauth2.googleapis.com/token",
+    "token_uri": process.env.token_uri,
     "auth_provider_x509_cert_url": process.env.auth_provider,
     "client_x509_cert_url": process.env.client
 
