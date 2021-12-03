@@ -23,6 +23,8 @@ var serviceAccount = {
     "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-8a9co%40cannabisstand-dfdcb.iam.gserviceaccount.com"
 };
 
+console.log("HERE----------->",process.env.type);
+
     // "type": process.env.type,
     // "project_id": process.env.project_id,
     // "private_key_id": process.env.private_key_id,
