@@ -20,7 +20,8 @@ var serviceAccount = {
     "auth_uri": process.env.auth_uri,
     "token_uri": "https://oauth2.googleapis.com/token",
     "auth_provider_x509_cert_url": process.env.auth_provider,
-    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-8a9co%40cannabisstand-dfdcb.iam.gserviceaccount.com"
+    "client_x509_cert_url": process.env.client
+
 };
 
 
