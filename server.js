@@ -61,6 +61,7 @@ app.get("/", function (req, res) {
 
 app.get("/top10", function (req, res) {
     database.ref('30dayscore').on('value', function (snapshot) {
+        console.log("--- success firebase hit! ---")
         return res.send(snapshot.val());
     });
 });
