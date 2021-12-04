@@ -24,7 +24,6 @@ var serviceAccount = {
     "token_uri": process.env.token_uri,
     "auth_provider_x509_cert_url": process.env.auth_provider,
     "client_x509_cert_url": process.env.client
-
 };
 
 
@@ -62,7 +61,6 @@ app.get("/", function (req, res) {
 
 app.get("/top10", function (req, res) {
     database.ref('30dayscore').on('value', function (snapshot) {
-        console.log(snapshot.val());
         return res.send(snapshot.val());
     });
 });
