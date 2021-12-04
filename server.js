@@ -40,11 +40,6 @@ if(cemail === '"firebase-adminsdk-8a9co@cannabisstand-dfdcb.iam.gserviceaccount.
     console.log('error: cemail doesnt match');
 }
 
-    // "private_key": process.env.private_key, 
-    // ***notworking ----> Application error, check Heroku logs
-
-    // "client_email": process.env.client_email,    
-    // ***notworking --->
     // Failed to load resource: the server responded with a status of 503 (Service Unavailable)
     // Uncaught (in promise) SyntaxError: Unexpected token < in JSON at position 0
 
