@@ -53,7 +53,7 @@ if(cemail === '"firebase-adminsdk-8a9co@cannabisstand-dfdcb.iam.gserviceaccount.
 
     
 admin.initializeApp({
-    credential: admin.credential.cert(JSON.parse(serviceAccount)),
+    credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://cannabisstand-dfdcb-default-rtdb.firebaseio.com"
 });
 
