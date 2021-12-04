@@ -9,7 +9,7 @@ var PORT = process.env.PORT || 3000;
 const app = express();
 
 
-let pkey = process.env.private_key;
+let pkey = process.env.private_key.replace(/\\n/g, '\n');
 let cemail = process.env.client_email;
 
 // var serviceAccount = require("/Users/abstract/lemonade/server-firebase-ex/cannabisstand-dfdcb-firebase-adminsdk-8a9co-d28f15a960.json");
