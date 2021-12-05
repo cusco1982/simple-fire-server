@@ -28,9 +28,6 @@ var serviceAccount = {
 };
 
 
-console.log(pkey);
-console.log(cemail);
-    
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://cannabisstand-dfdcb-default-rtdb.firebaseio.com"
@@ -47,16 +44,13 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
-console.log(" here2 ")
 
 
-// app.get("/top10", function (req, res) {
+app.get("/top10", function (req, res) {
     database.ref('30dayscore').on('value', function (snapshot) {
-        console.log("--- success firebase hit! ---")
-        // return res.send(snapshot.val());
-        console.log(snapshot.val())
+        return res.send(snapshot.val());
     });
-// });
+});
 
 console.log(" here3 ")
 
