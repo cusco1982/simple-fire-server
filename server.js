@@ -62,12 +62,13 @@ app.get("/", function (req, res) {
 console.log(" here2 ")
 
 
-app.get("/top10", function (req, res) {
+// app.get("/top10", function (req, res) {
     database.ref('30dayscore').on('value', function (snapshot) {
         console.log("--- success firebase hit! ---")
-        return res.send(snapshot.val());
+        // return res.send(snapshot.val());
+        console.log(snapshot.val())
     });
-});
+// });
 
 console.log(" here3 ")
 
