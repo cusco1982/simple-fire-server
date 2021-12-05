@@ -59,12 +59,17 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
+console.log(" here2 ")
+
+
 app.get("/top10", function (req, res) {
     database.ref('30dayscore').on('value', function (snapshot) {
         console.log("--- success firebase hit! ---")
         return res.send(snapshot.val());
     });
 });
+
+console.log(" here3 ")
 
 
 app.listen(PORT, function () {
