@@ -1,6 +1,6 @@
 // const array = [];
 console.log("front-end");
-fetch('/top10').then(response => response.json()).then(data => console.log(data));
+fetch('/top10').then(response => response.text()).then(text => console.log(text));
     //  array.push(data));
 
 
