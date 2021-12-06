@@ -46,6 +46,11 @@ app.get("/top10", function (req, res) {
     database.ref('7dayscore').orderByChild("score").limitToLast(10).on('value', function (snapshot) {
         return res.send(snapshot.val());
     });
+
+    database.ref('14dayscore').orderByChild("score").limitToLast(10).on('value', function (snapshot) {
+        return res.send(snapshot.val());
+    });
+
 });
 
 
