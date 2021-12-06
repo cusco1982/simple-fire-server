@@ -10,7 +10,6 @@ const app = express();
 
 
 
-// var serviceAccount = require("/Users/abstract/lemonade/server-firebase-ex/cannabisstand-dfdcb-firebase-adminsdk-8a9co-d28f15a960.json");
 var serviceAccount = {
     "type": process.env.type,
     "project_id": process.env.project_id,
@@ -44,12 +43,12 @@ app.get("/", function (req, res) {
 
 
 app.get("/top10", function (req, res) {
-    database.ref('30dayscore').on('value', function (snapshot) {
+    database.ref('7dayscore').orderByChild("score").limitToLast(10).on('value', function (snapshot) {
         return res.send(snapshot.val());
     });
 });
 
-console.log(" here3 ")
+
 
 
 app.listen(PORT, function () {
