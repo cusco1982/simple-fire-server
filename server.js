@@ -9,17 +9,14 @@ var PORT = process.env.PORT || 3000;
 const app = express();
 
 
-let pkey = process.env.private_key.replace(/\\n/g, '\n');
-let cemail = process.env.client_email;
-
 
 // var serviceAccount = require("/Users/abstract/lemonade/server-firebase-ex/cannabisstand-dfdcb-firebase-adminsdk-8a9co-d28f15a960.json");
 var serviceAccount = {
     "type": process.env.type,
     "project_id": process.env.project_id,
     "private_key_id": process.env.private_key_id,
-    "private_key": pkey,
-    "client_email": cemail,
+    "private_key": process.env.private_key.replace(/\\n/g, '\n'),
+    "client_email": process.env.client_email,
     "client_id": process.env.client_id,
     "auth_uri": process.env.auth_uri,
     "token_uri": process.env.token_uri,
