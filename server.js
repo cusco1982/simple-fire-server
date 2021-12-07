@@ -48,7 +48,17 @@ let before30Day = new Date().getTime() - (24 * 30 * 3600 * 1000);
 
 app.get("/7alltimetop10", function (req, res) {
     database.ref('7dayscore').orderByChild("score").limitToLast(10).on('value', function (snapshot) {
-        return res.send(snapshot.val());
+
+        const firebaseObj = snapshot.val();
+        const usersArr = [];
+
+        for (const userObjs in firebaseObj) {
+            const users = firebaseobj[userObjs]
+            usersArr.push(users);
+        }
+
+        usersArr.sort(function (a, b) { return b.score - a.score })
+        return res.send(usersArr);
     });
 });
 app.get("/14alltimetop10", function (req, res) {
@@ -82,7 +92,6 @@ app.get("/30dailytop10", function (req, res) {
 });
 
 
-
 // // --------------- 7/14/30 30-Day Top10 ------------------------------------>>
 
 app.get("/7monthlytop10", function (req, res) {
@@ -100,7 +109,6 @@ app.get("/30monthlytop10", function (req, res) {
         return res.send(snap.val());
     });
 });
-
 
 
 
