@@ -43,7 +43,7 @@ app.get("/", function (req, res) {
 // ---------------------------------------- FIREBASE TOP 10 SCORES ----------------------------------------------
 
 let before24Hour = new Date().getTime() - (24 * 3600 * 1000);
-// let before30Day = new Date().getTime() - (24 * 30 * 3600 * 1000);
+let before30Day = new Date().getTime() - (24 * 30 * 3600 * 1000);
 // ---------------------------- All Time Top10 ----------------------------->>
 
 app.get("/7alltimetop10", function (req, res) {
@@ -61,7 +61,7 @@ app.get("/7alltimetop10", function (req, res) {
 app.get("/7dailytop10", function (req, res) {
 
     database.ref().child('7dayscore').orderByChild('dateAdded').startAt(before24Hour).on('value', function (snap) {
-        return res.send(snapshot.val());
+        return res.send(snap.val());
     });
 
 });
@@ -70,13 +70,13 @@ app.get("/7dailytop10", function (req, res) {
 
 // // --------------- 7/14/30 30-Day Top10 ------------------------------------>>
 
-// app.get("/7monthlytop10", function (req, res) {
+app.get("/7monthlytop10", function (req, res) {
 
-//     database.ref().child('7dayscore').orderByChild('dateAdded').startAt(before30Day).on('value', function (snap) {
-//         return res.send(snapshot.val());
-//     });
+    database.ref().child('7dayscore').orderByChild('dateAdded').startAt(before30Day).on('value', function (snap) {
+        return res.send(snap.val());
+    });
 
-// });
+});
 
 
 
