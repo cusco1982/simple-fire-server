@@ -70,6 +70,16 @@ app.get("/7dailytop10", function (req, res) {
         return res.send(snap.val());
     });
 });
+app.get("/14dailytop10", function (req, res) {
+    database.ref().child('14dayscore').orderByChild('dateAdded').startAt(before24Hour).on('value', function (snap) {
+        return res.send(snap.val());
+    });
+});
+app.get("/30dailytop10", function (req, res) {
+    database.ref().child('30dayscore').orderByChild('dateAdded').startAt(before24Hour).on('value', function (snap) {
+        return res.send(snap.val());
+    });
+});
 
 
 
@@ -77,6 +87,16 @@ app.get("/7dailytop10", function (req, res) {
 
 app.get("/7monthlytop10", function (req, res) {
     database.ref().child('7dayscore').orderByChild('dateAdded').startAt(before30Day).on('value', function (snap) {
+        return res.send(snap.val());
+    });
+});
+app.get("/14monthlytop10", function (req, res) {
+    database.ref().child('14dayscore').orderByChild('dateAdded').startAt(before30Day).on('value', function (snap) {
+        return res.send(snap.val());
+    });
+});
+app.get("/30monthlytop10", function (req, res) {
+    database.ref().child('30dayscore').orderByChild('dateAdded').startAt(before30Day).on('value', function (snap) {
         return res.send(snap.val());
     });
 });
